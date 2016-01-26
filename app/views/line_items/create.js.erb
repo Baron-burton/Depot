@@ -1,0 +1,7 @@
+// This tells the browser to replace the content of the element whose id='cart'
+// with that HTML
+$('#cart').html("<%= escape_javascript render(@cart) %>");
+
+// Changes the background colour of the current item when it is added to the cart
+$('#current_item').css({'background-color':'#88ff88'}).
+	animate({'background-color':'#114411'}, 1000);

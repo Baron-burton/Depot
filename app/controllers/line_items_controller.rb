@@ -31,7 +31,10 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_url }
+        # format.js: when 'create' finishes handling an Ajax request 
+        # Rails will look for a 'create' template to render
+        format.js { @current_item = @line_item }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
