@@ -1,3 +1,5 @@
+// Only shows the cart when there is at least 1 item in it
+if ($('#cart tr').length == 1) { $('#cart').show('blind', 1000); }
 // This tells the browser to replace the content of the element whose id='cart'
 // with that HTML
 $('#cart').html("<%= escape_javascript render(@cart) %>");
